@@ -8,10 +8,11 @@ export const Feed = () => {
   useEffect(() => {
     fetch("http://localhost:3000/blog-posts")
       .then((response) => {
-        response.json();
+        return response.json();
       })
       .then((data) => setPosts(data));
   }, []);
+
   return (
     <main className={styles.grid}>
       {posts.map((post) => (
